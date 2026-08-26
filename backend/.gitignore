@@ -1,0 +1,38 @@
+# Dependency directories
+node_modules/
+
+# Environment variables and secrets
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Compiled files (if using TypeScript or Babel)
+dist/
+build/
+out/
+tsbuildinfo/
+
+# npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
