@@ -47,6 +47,48 @@
       "CityName": "Oslo",
       "Temp": "-3.9",
       "Status": "Clear"
+    },
+    {
+      "CityCode": "292223",
+      "CityName": "Dubai",
+      "Temp": "38.2",
+      "Status": "Clear"
+    },
+    {
+      "CityCode": "1880252",
+      "CityName": "Singapore",
+      "Temp": "29.6",
+      "Status": "Clouds"
+    },
+    {
+      "CityCode": "5128581",
+      "CityName": "New York",
+      "Temp": "18.3",
+      "Status": "Clear"
+    },
+    {
+      "CityCode": "2643743",
+      "CityName": "London",
+      "Temp": "14.7",
+      "Status": "Rain"
+    },
+    {
+      "CityCode": "2950159",
+      "CityName": "Berlin",
+      "Temp": "12.5",
+      "Status": "Clouds"
+    },
+    {
+      "CityCode": "3117735",
+      "CityName": "Madrid",
+      "Temp": "25.1",
+      "Status": "Clear"
+    },
+    {
+      "CityCode": "524901",
+      "CityName": "Moscow",
+      "Temp": "5.8",
+      "Status": "Clouds"
     }
   ]
 }
