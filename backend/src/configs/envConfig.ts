@@ -15,4 +15,5 @@ export const env: EnvConfig = {
   API_SERVER_PORT: Number("API_SERVER_PORT"),
   OPENWEATHER_API_KEY: getEnvVariable("OPENWEATHER_API_KEY"),
   OPENWEATHER_BASE_URL: getEnvVariable("OPENWEATHER_BASE_URL"),
+  CACHE_TTL_SECONDS: Number("CACHE_TTL_SECONDS"),
 };
