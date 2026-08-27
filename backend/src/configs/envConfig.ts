@@ -13,5 +13,6 @@ function getEnvVariable(key: any, required = true): any {
 
 export const env: EnvConfig = {
   API_SERVER_PORT: Number("API_SERVER_PORT"),
-  API_KEY: getEnvVariable("API_KEY"),
+  OPENWEATHER_API_KEY: getEnvVariable("OPENWEATHER_API_KEY"),
+  OPENWEATHER_BASE_URL: getEnvVariable("OPENWEATHER_BASE_URL"),
 };

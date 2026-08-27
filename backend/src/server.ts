@@ -1,10 +1,8 @@
-import express from "express";
+import { createApp } from "./app";
 import { env } from "./configs/envConfig";
 
-const app = express();
+const app = createApp();
 const PORT = env.API_SERVER_PORT || 5000;
-
-app.use(express.json);
 
 const startServer = async () => {
   try {
