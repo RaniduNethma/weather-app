@@ -23,28 +23,13 @@ export const CitiesFileSchema = z.object({
 export const OpenWeatherResponseSchema = z.object({
   id: z.number(),
   name: z.string(),
-  weather: z
-    .array(
-      z.object({
-        main: z.string(),
-        description: z.string(),
-        icon: z.string(),
-      }),
-    )
-    .min(1),
   main: z.object({
     temp: z.number(),
-    feels_like: z.number(),
     humidity: z.number(),
-    pressure: z.number(),
   }),
   wind: z.object({
     speed: z.number(),
   }),
-  clouds: z.object({
-    all: z.number(),
-  }),
-  visibility: z.number().optional(),
   dt: z.number(),
 });
 export type OpenWeatherResponse = z.infer<typeof OpenWeatherResponseSchema>;
@@ -53,4 +38,22 @@ export interface ComfortIndexParameters {
   temperatureScore: number;
   humidityScore: number;
   windScore: number;
+}
+
+export interface CityComfortResult {
+  cityCode: string;
+  cityName: string;
+  temperature: number;
+  humidity: number;
+  windSpeed: number;
+  comfortIndex: number;
+  parameters: ComfortIndexParameters;
+  rank: number;
+  observedAt: string;
+}
+
+export interface DashboardResponse {
+  generatedAt: string;
+  cityCount: number;
+  cities: CityComfortResult[];
 }
