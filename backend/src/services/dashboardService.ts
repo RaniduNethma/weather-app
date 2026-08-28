@@ -34,7 +34,7 @@ const buildDashBoard = async (): Promise<DashboardResponse> => {
         windSpeed: data.wind.speed,
         comfortIndex: score,
         parameters,
-        observedAt: new Date(data.dt * 100).toISOString(),
+        observedAt: new Date(data.dt * 1000).toISOString(),
       };
     },
   );
