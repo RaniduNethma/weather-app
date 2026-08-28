@@ -5,6 +5,10 @@ export interface EnvConfig {
   OPENWEATHER_API_KEY: string;
   OPENWEATHER_BASE_URL: string;
   CACHE_TTL_SECONDS: number;
+  CORS_ORIGIN: string;
+  AUTH0_ISSUER_BASE_URL: string;
+  AUTH0_AUDIENCE: string;
+  AUTH0_ALLOWED_EMAILS: string;
 }
 
 export const CityEntrySchema = z.object({
