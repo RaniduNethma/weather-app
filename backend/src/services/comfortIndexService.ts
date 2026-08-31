@@ -1,10 +1,11 @@
 import { ComfortIndexParameters } from "../types/type";
 
-// comfort impact weights, temperature 50%, humidity 30%, wind 20%
+// comfort impact weights, temperature 40%, humidity 25%, wind 20% and cloudiness 15%
 const weights = {
-  temperature: 0.5,
-  humidity: 0.3,
+  temperature: 0.4,
+  humidity: 0.25,
   wind: 0.2,
+  cloudiness: 0.15,
 } as const;
 
 const clamp = (value: number, min = 0, max = 100): number => {
@@ -33,21 +34,31 @@ const windScore = (windSpeedMS: number): number => {
   return clamp(100 - excess * penaltyPerMS);
 };
 
+// ideal cloudiness 40%
+const cloudinessScore = (cloudinessPct: number): number => {
+  const idealPct = 40;
+  const PenaltyPerPercentage = 1.2;
+  return clamp(100 - Math.abs(cloudinessPct - idealPct) * PenaltyPerPercentage);
+};
+
 export const computeComfortIndex = (input: {
   temperature: number;
   humidity: number;
   windSpeed: number;
+  cloudiness: number;
 }): { score: number; parameters: ComfortIndexParameters } => {
   const parameters: ComfortIndexParameters = {
     temperatureScore: Number(temperatureScore(input.temperature).toFixed(2)),
     humidityScore: Number(humidityScore(input.humidity).toFixed(2)),
     windScore: Number(windScore(input.windSpeed).toFixed(2)),
+    cloudinessScore: Number(cloudinessScore(input.cloudiness).toFixed(2)),
   };
 
   const rawScore =
     parameters.temperatureScore * weights.temperature +
     parameters.humidityScore * weights.humidity +
-    parameters.windScore * weights.wind;
+    parameters.windScore * weights.wind +
+    parameters.cloudinessScore * weights.cloudiness;
 
   return { score: Number(clamp(rawScore).toFixed(2)), parameters };
 };
