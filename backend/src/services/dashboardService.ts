@@ -24,6 +24,7 @@ const buildDashBoard = async (): Promise<DashboardResponse> => {
         temperature: data.main.temp,
         humidity: data.main.humidity,
         windSpeed: data.wind.speed,
+        cloudiness: data.clouds.all,
       });
 
       return {
@@ -32,6 +33,7 @@ const buildDashBoard = async (): Promise<DashboardResponse> => {
         temperature: Number(data.main.temp.toFixed(1)),
         humidity: data.main.humidity,
         windSpeed: data.wind.speed,
+        cloudiness: data.clouds.all,
         comfortIndex: score,
         parameters,
         observedAt: new Date(data.dt * 1000).toISOString(),

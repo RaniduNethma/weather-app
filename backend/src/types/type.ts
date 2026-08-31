@@ -34,6 +34,9 @@ export const OpenWeatherResponseSchema = z.object({
   wind: z.object({
     speed: z.number(),
   }),
+  clouds: z.object({
+    all: z.number(),
+  }),
   dt: z.number(),
 });
 export type OpenWeatherResponse = z.infer<typeof OpenWeatherResponseSchema>;
@@ -42,6 +45,7 @@ export interface ComfortIndexParameters {
   temperatureScore: number;
   humidityScore: number;
   windScore: number;
+  cloudinessScore: number;
 }
 
 export interface CityComfortResult {
@@ -50,6 +54,7 @@ export interface CityComfortResult {
   temperature: number;
   humidity: number;
   windSpeed: number;
+  cloudiness: number;
   comfortIndex: number;
   parameters: ComfortIndexParameters;
   rank: number;
