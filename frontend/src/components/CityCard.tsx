@@ -47,6 +47,7 @@ export function CityCard({ city }: CityCardProps) {
         <Stat label="Temperature" value={`${city.temperature}°C`} />
         <Stat label="Humidity" value={`${city.humidity}%`} />
         <Stat label="Wind speed" value={`${city.windSpeed}ms`} />
+        <Stat label="Cloudiness" value={`${city.cloudiness}%`} />
       </div>
 
       <div className="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700">

@@ -2,6 +2,7 @@ export interface ComfortBreakdown {
   temperatureScore: number;
   humidityScore: number;
   windScore: number;
+  cloudinessScore: number;
 }
 
 export interface CityComfortResult {
@@ -10,6 +11,7 @@ export interface CityComfortResult {
   temperature: number;
   humidity: number;
   windSpeed: number;
+  cloudiness: number;
   comfortIndex: number;
   parameters: ComfortBreakdown;
   rank: number;
